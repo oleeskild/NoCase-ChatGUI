@@ -48,14 +48,11 @@ public class Chat extends Application {
 			root.setRight(roaster);
 			root.setBottom(input);
 			
-			input.setOnKeyPressed(new EventHandler<KeyEvent>(){
-				    @Override
-				    public void handle(KeyEvent ke){
-				    	if (ke.getCode().equals(KeyCode.ENTER)){
-				    		handleInput(input.getText());
-				    		input.setText("");
-				    	}
-				    }
+			input.setOnKeyPressed( key ->{
+				if (key.getCode().equals(KeyCode.ENTER)){
+		    		handleInput(input.getText());
+		    		input.setText("");
+		    	}
 			});
 			
 			connect("sosial.tv");
